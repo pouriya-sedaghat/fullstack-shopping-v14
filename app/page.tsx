@@ -2,7 +2,7 @@ import ProductItem from "@/components/ProductItem";
 
 import products from "@/data/products.json";
 
-import { Row, Col } from "react-bootstrap";
+import { Row } from "react-bootstrap";
 
 import { Product } from "@/interface/Product";
 
@@ -15,10 +15,8 @@ import { Product } from "@/interface/Product";
 //   description: "Products Shoppping.",
 // };
 
-type Products = Product[];
-
 function Home() {
-  const myProducts: Products = products;
+  const myProducts: Product[] = products;
   return (
     <Row className="py-4">
       {myProducts.map((item) => (

@@ -12,15 +12,7 @@ import { useRouter } from "next/navigation";
 
 import dynamic from "next/dynamic";
 
-type Product = {
-  slug: string;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  count: number;
-  image: string;
-};
+import { Product } from "@/interface/Product";
 
 function Cart() {
   const {

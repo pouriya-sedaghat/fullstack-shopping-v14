@@ -2,34 +2,29 @@
 
 import { createContext, useReducer } from "react";
 
+import { Product } from "@/interface/Product";
+
 import Cookies from "js-cookie";
 
-type Product = {
-  slug: string;
-  title: string;
-  price: number;
-  description: string;
-  category: string;
-  count: number;
-  image: string;
-  quantity?: number;
-};
-
-type CartValueContext = {
-  state: {
-    cart: {
-      cartItems: Product[];
-    };
+type State = {
+  cart: {
+    cartItems: Product[];
   };
-  dispatch: ({ type, payload }: { type: string; payload: Product }) => void;
 };
 
-enum DispatchType {
+type Action = { type: string; payload: Product };
+
+enum ActionTypeValue {
   ADD_ITEM = "ADD_ITEM",
   REMOVE_ITEM = "REMOVE_ITEM",
 }
 
-export const CartContext = createContext({} as CartValueContext);
+type CartContext = {
+  state: State;
+  dispatch: (action: Action) => void;
+};
+
+export const CartContext = createContext({} as CartContext);
 
 const initialState = {
   cart: Cookies.get("cart")
@@ -39,12 +34,9 @@ const initialState = {
       },
 };
 
-function reducer(
-  state: { cart: { cartItems: Product[] } },
-  action: { type: string; payload: Product }
-) {
+function reducer(state: State, action: Action) {
   switch (action.type) {
-    case DispatchType.ADD_ITEM:
+    case ActionTypeValue.ADD_ITEM:
       {
         const newItem = action.payload;
 
@@ -63,7 +55,7 @@ function reducer(
         return { ...state, cart: { ...state.cart, cartItems } };
       }
       break;
-    case DispatchType.REMOVE_ITEM:
+    case ActionTypeValue.REMOVE_ITEM:
       {
         const cartItems = state.cart.cartItems.filter(
           (item) => item.slug !== action.payload.slug

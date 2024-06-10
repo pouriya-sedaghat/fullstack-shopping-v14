@@ -6,5 +6,6 @@ export interface Product {
   category: string;
   count: number;
   image: string;
+  quantity?: number;
   main?: boolean;
 }
