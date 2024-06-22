@@ -29,7 +29,7 @@ function Header() {
           className="d-flex justify-content-between align-items-center py-2"
         >
           <Link href="/" className="text-reset text-decoration-none px-2">
-            <h1 className="h5 m-0">Shopping</h1>
+            <h1 className="h4 m-0">Shopping</h1>
           </Link>
           <ul className="d-flex list-unstyled m-0">
             <li className="me-1">

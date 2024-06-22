@@ -26,7 +26,7 @@ function ProductItem({
           <Image src={image} alt={title} width={200} height={290} priority />
         </Link>
         <div className="mt-2">
-          <h2 className="h6">{title}</h2>
+          <h2 className="h5">{title}</h2>
           <p>Price : {price.toLocaleString()} IRR</p>
           <AddToCart
             product={{

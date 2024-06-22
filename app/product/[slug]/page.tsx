@@ -28,7 +28,7 @@ function ProductDetail({ params: { slug } }: { params: { slug: string } }) {
           />
         </div>
         <div>
-          <h2 className="h6">{loadedProduct.title}</h2>
+          <h2 className="h5">{loadedProduct.title}</h2>
           <p>Category : {loadedProduct.category}</p>
           <p>{loadedProduct.description}</p>
           <p>Count : {loadedProduct.count}</p>

@@ -4,7 +4,7 @@ import { createContext, useReducer } from "react";
 
 import { Product } from "@/interface/Product";
 
-import Cookies from "js-cookie";
+import { Cookies } from "typescript-cookie";
 
 type State = {
   cart: {

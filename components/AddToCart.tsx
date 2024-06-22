@@ -8,6 +8,8 @@ import { useRouter } from "next/navigation";
 
 import { Product } from "@/interface/Product";
 
+import { toast } from "react-toastify";
+
 function AddToCart({ product }: { product: Product }) {
   const {
     state: {
@@ -23,9 +25,11 @@ function AddToCart({ product }: { product: Product }) {
 
     const quantity = existingItem ? existingItem.quantity! + 1 : 1;
 
-    if (quantity > product.count) return alert("Product Is out.");
+    if (quantity > product.count) return toast.error("Product Is out.");
 
     dispatch({ type: "ADD_ITEM", payload: { ...product, quantity } });
+
+    toast.success("Added Product.");
 
     product.main && router.push("/cart");
   }

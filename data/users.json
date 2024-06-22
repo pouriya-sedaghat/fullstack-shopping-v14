@@ -1,0 +1,14 @@
+[
+  {
+    "username": "Pouriya Sedaghat",
+    "email": "pouriyastk1@gmail.com",
+    "password": "Pou7riy9@31",
+    "isAdmin": true
+  },
+  {
+    "username": "Masood Sadri",
+    "email": "masoodsadri@gmail.com",
+    "password": "mas7ood9@31",
+    "isAdmin": false
+  }
+]
